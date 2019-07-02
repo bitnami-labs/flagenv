@@ -4,6 +4,8 @@ workflow "CI" {
 }
 
 action "Test" {
-  uses = "./.github/actions/golang"
-  args = "test"
+  uses = "cedrickring/golang-action@1.3.0"
+  env = {
+    GOPROXY = "https://proxy.golang.org"
+  }
 }
